@@ -3,10 +3,9 @@ class Solution {
     // 1668 Maximum Repeating Substring 
     int maxRepeating(string sequence, string word) {
         if(word.length() >= sequence.length())return word == sequence ? 1: 0; 
-        int k =0,i = 0, len = word.length(),globalRes =0, res = 0; 
+        int len = word.length(), globalRes = 0, res = 0; 
         string window = ""; 
         for(int i= 0; i+ len<= sequence.length() ; i++){
-          //  window+=sequence[i]; 
             window = sequence.substr(i,len); 
             if(window == word){
                 res++;
@@ -14,8 +13,7 @@ class Solution {
             }
             else res = 0; 
             globalRes = max(res, globalRes); 
-        }
-            
+        }   
         return globalRes; 
     }
     
